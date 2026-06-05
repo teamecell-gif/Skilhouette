@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -11,17 +11,23 @@
   --animate-float-bronze: float-bronze 4.5s ease-in-out infinite;
   --animate-gradient-x: gradient-x 8s ease infinite;
 
+  /* E-Cell VNIT brand colors */
+  --color-ecell: #0298F9;
+  --color-ecell-dark: #0277C7;
+  --color-ecell-light: #3BB5FF;
+  --color-ecell-glow: rgba(2, 152, 249, 0.35);
+
   @keyframes glow-gold {
-    0% { box-shadow: 0 0 10px rgba(234, 179, 8, 0.15), 0 0 20px rgba(234, 179, 8, 0.05); }
-    100% { box-shadow: 0 0 25px rgba(234, 179, 8, 0.5), 0 0 40px rgba(250, 204, 21, 0.3); }
+    0% { box-shadow: 0 0 10px rgba(2, 152, 249, 0.1), 0 0 20px rgba(2, 152, 249, 0.05); }
+    100% { box-shadow: 0 0 25px rgba(2, 152, 249, 0.45), 0 0 50px rgba(2, 152, 249, 0.2); }
   }
   @keyframes glow-silver {
-    0% { box-shadow: 0 0 10px rgba(148, 163, 184, 0.15), 0 0 20px rgba(148, 163, 184, 0.05); }
-    100% { box-shadow: 0 0 25px rgba(148, 163, 184, 0.45), 0 0 40px rgba(148, 163, 184, 0.25); }
+    0% { box-shadow: 0 0 10px rgba(2, 152, 249, 0.1), 0 0 20px rgba(2, 152, 249, 0.05); }
+    100% { box-shadow: 0 0 20px rgba(2, 152, 249, 0.35), 0 0 40px rgba(2, 152, 249, 0.15); }
   }
   @keyframes glow-bronze {
-    0% { box-shadow: 0 0 10px rgba(249, 115, 22, 0.15), 0 0 20px rgba(249, 115, 22, 0.05); }
-    100% { box-shadow: 0 0 25px rgba(249, 115, 22, 0.45), 0 0 40px rgba(249, 115, 22, 0.25); }
+    0% { box-shadow: 0 0 10px rgba(2, 152, 249, 0.1), 0 0 20px rgba(2, 152, 249, 0.05); }
+    100% { box-shadow: 0 0 20px rgba(2, 152, 249, 0.3), 0 0 40px rgba(2, 152, 249, 0.12); }
   }
   @keyframes float-gold {
     0%, 100% { transform: translateY(0px); }
@@ -40,17 +46,16 @@
     50% { background-position: 100% 50%; }
   }
   
-  --font-sans: "Outfit", "Inter", "sans-serif";
+  --font-sans: "Inter", "system-ui", "sans-serif";
 }
 
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden min-h-screen selection:bg-violet-500/30 selection:text-white;
+    @apply bg-black text-white/90 font-sans antialiased overflow-x-hidden min-h-screen selection:bg-ecell/30 selection:text-white;
     background-image: 
-      radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0px, transparent 50%),
-      radial-gradient(at 50% 0%, hsla(220, 40%, 11%, 1) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(270, 35%, 11%, 1) 0px, transparent 50%),
-      radial-gradient(at 50% 100%, hsla(258, 30%, 8%, 1) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(2, 152, 249, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(2, 152, 249, 0.03) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(2, 152, 249, 0.02) 0px, transparent 50%);
     background-attachment: fixed;
   }
 }
@@ -78,30 +83,30 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(2, 152, 249, 0.15);
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(2, 152, 249, 0.08);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(2, 152, 249, 0.35);
 }
 
-/* Glassmorphism styles */
+/* E-Cell Glass styles — dark, minimal, high-contrast */
 .glass-panel {
-  @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  @apply bg-black/80 backdrop-blur-xl border border-white/8 shadow-2xl;
 }
 
 .glass-card {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg;
+  @apply bg-white/[0.02] backdrop-blur-lg border border-white/8 shadow-lg;
 }
 
 .glass-card-hover {
-  @apply hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+  @apply hover:bg-white/8 hover:border-ecell/20 transition-all duration-300;
 }
 
 .glass-input {
-  @apply bg-slate-950/40 backdrop-blur-md border border-white/10 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-300 rounded-lg;
+  @apply bg-black/80 backdrop-blur-md border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-ecell/50 focus:border-ecell/50 transition-all duration-300 rounded-lg;
 }
 
 /* Custom glow utility */

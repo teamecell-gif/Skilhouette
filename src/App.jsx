@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Podium from "./components/Podium";
 import TableList from "./components/TableList";
 import ToastContainer from "./components/Toast";
-import { Award, Play } from "lucide-react";
+import { Award } from "lucide-react";
 
 // Default settings
 const DEFAULT_CONFIG = {
@@ -198,7 +198,7 @@ export default function App() {
       // Reset timer
       timeStartedRef.current = Date.now();
     }
-  }, [config.isDemoMode, config.sheetUrlOrId, config.soundEnabled, addToast, playRankUp, playTop3Entry]);
+  }, [config.soundEnabled, addToast, playRankUp, playTop3Entry]);
 
   // ----------------------------------------------------
   // Timer & Auto-Refresh Thread (requestAnimationFrame)
@@ -313,7 +313,7 @@ export default function App() {
         {isDataEmpty ? (
           /* Empty/No Sheet Connected Placeholder State */
           <div className="flex-1 max-w-xl mx-auto px-4 py-20 text-center flex flex-col items-center justify-center gap-6">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-violet-600/20 to-fuchsia-600/20 border border-violet-500/20 flex items-center justify-center text-violet-400 animate-pulse-slow">
+            <div className="w-20 h-20 rounded-full bg-ecell/10 border border-ecell/20 flex items-center justify-center text-ecell animate-pulse-slow">
               <Award className="w-10 h-10" />
             </div>
             <div>
@@ -325,14 +325,14 @@ export default function App() {
               </p>
             </div>
             {isRefreshing && (
-              <div className="flex items-center gap-2 text-violet-400 text-xs font-bold uppercase tracking-wider">
-                <span className="w-2 h-2 bg-violet-500 rounded-full animate-ping" /> Loading live data...
+              <div className="flex items-center gap-2 text-ecell text-xs font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 bg-ecell rounded-full animate-ping" /> Loading live data...
               </div>
             )}
           </div>
         ) : (
           /* Live Leaderboard Display */
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-0">
             
             {/* Top 3 Podium */}
             <Podium 
