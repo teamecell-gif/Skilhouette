@@ -133,7 +133,7 @@ export default function App() {
                   "top3",
                   6000,
                   "top-center",
-                  `ID No: ${p.department} • ${p.points.toLocaleString()} PTS`
+                  `${p.points.toLocaleString()} PTS`
                 );
               } 
               // Case 2: General Rank Up
@@ -151,7 +151,7 @@ export default function App() {
                 "top3",
                 6000,
                 "top-center",
-                `ID No: ${p.department} • ${p.points.toLocaleString()} PTS`
+                `${p.points.toLocaleString()} PTS`
               );
             }
           }

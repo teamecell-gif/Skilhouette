@@ -48,8 +48,7 @@ export default function TableList({
         {/* Table Header */}
         <div className="grid grid-cols-12 px-6 py-4 border-b border-white/8 bg-black/90 text-[11px] font-black uppercase tracking-widest text-white/30">
           <div className="col-span-2 md:col-span-1">Rank</div>
-          <div className="col-span-5 md:col-span-6">Participant</div>
-          <div className="col-span-3 md:col-span-3">ID No</div>
+          <div className="col-span-8 md:col-span-9">Participant</div>
           <div className="col-span-2 md:col-span-2 text-right">Points</div>
         </div>
 
@@ -103,7 +102,7 @@ export default function TableList({
                     </div>
 
                     {/* Participant Info */}
-                    <div className="col-span-5 md:col-span-6 flex items-center gap-3">
+                    <div className="col-span-8 md:col-span-9 flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-black/80 flex-shrink-0 relative">
                         {player.photoUrl ? (
                           <img
@@ -126,13 +125,6 @@ export default function TableList({
                       <div className="font-bold text-white text-sm md:text-base tracking-tight truncate pr-2">
                         {player.name}
                       </div>
-                    </div>
-
-                    {/* ID No */}
-                    <div className="col-span-3 md:col-span-3">
-                      <span className="text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full bg-black/60 border border-white/5 text-white/40 uppercase tracking-wider inline-block max-w-full truncate">
-                        {player.department}
-                      </span>
                     </div>
 
                     {/* Points */}

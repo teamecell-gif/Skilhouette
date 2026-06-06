@@ -144,9 +144,6 @@ export default function Podium({ topThree, rankChanges = {} }) {
                   <h3 className={`${style.nameSize} font-bold tracking-tight text-white line-clamp-1 group-hover:text-ecell-light transition-colors`}>
                     {player.name}
                   </h3>
-                  <p className="text-[10px] md:text-xs text-white/40 font-bold tracking-wide uppercase line-clamp-1 mt-0.5">
-                    ID No: {player.department}
-                  </p>
                 </div>
 
                 {/* Bottom of Card: Points Display */}
