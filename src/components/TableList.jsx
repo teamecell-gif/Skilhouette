@@ -13,8 +13,8 @@ export default function TableList({
 
   const isSearching = searchQuery.trim() !== "";
 
-  // Filter remaining participants (rank > 3) for the base view, but search across all when searching
-  const listParticipants = participants.filter((p) => p.rank > 3);
+  // Filter remaining participants (index >= 3) for the base view, but search across all when searching
+  const listParticipants = participants.filter((p, index) => index >= 3);
   const sourceParticipants = isSearching ? participants : listParticipants;
 
   // Apply search filter
